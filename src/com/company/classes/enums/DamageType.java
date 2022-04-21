@@ -1,4 +1,4 @@
-package com.company.enums;
+package com.company.classes.enums;
 
 public enum DamageType {
     ESTATE, PERSONAL

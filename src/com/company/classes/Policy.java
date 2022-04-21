@@ -1,9 +1,8 @@
 package com.company.classes;
 
-import com.company.enums.PolicyType;
 
 import java.util.List;
-
+import com.company.classes.enums.PolicyType;
 public class Policy {
     private int id;
     private Customer policyholder;

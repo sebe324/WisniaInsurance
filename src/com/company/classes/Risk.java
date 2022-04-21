@@ -1,6 +1,6 @@
 package com.company.classes;
 
-import com.company.enums.PolicyType;
+import com.company.classes.enums.PolicyType;
 
 public class Risk {
     private int id;

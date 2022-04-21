@@ -1,6 +1,6 @@
 package com.company.classes;
 
-import com.company.enums.DamageType;
+import com.company.classes.enums.DamageType;
 
 import java.util.List;
 
