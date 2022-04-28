@@ -2,7 +2,7 @@ package com.company.classes;
 
 import java.util.List;
 import java.util.Arrays;
-public class Customer {
+public abstract class Customer {
     private int id;
     private Address address;
     private String telephone;

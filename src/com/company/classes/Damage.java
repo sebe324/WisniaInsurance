@@ -61,8 +61,8 @@ private Customer victim;
 
     public float damagePayment() {
         float amount=0;
-        for (int i = 0; i < policy.getRisks().size(); i++) {
-            amount += policy.getRisks().get(i).getPrice();
+        for (int i = 0; i < policy.getRisks().getSize(); i++) {
+            amount += policy.getRisks().getRisk(i).getPrice();
         }
         return amount;
     }

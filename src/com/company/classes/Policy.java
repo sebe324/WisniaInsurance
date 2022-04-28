@@ -8,13 +8,13 @@ public class Policy {
     private Customer policyholder;
     private Customer insured;
     private Customer beneficiary;
-    private List<Risk> risks;
+    private Risks risks;
     private String dateFrom;
     private String dateTo;
     private float contributionAmount;
     private PolicyType policyType;
 
-    public Policy(int id, Customer policyholder, Customer insured, Customer beneficiary, List<Risk> risks, String dateFrom, String dateTo, float contributionAmount, PolicyType policyType) {
+    public Policy(int id, Customer policyholder, Customer insured, Customer beneficiary, Risks risks, String dateFrom, String dateTo, float contributionAmount, PolicyType policyType) {
         this.id = id;
         this.policyholder = policyholder;
         this.insured = insured;
@@ -30,7 +30,7 @@ public class Policy {
         return id;
     }
 
-    public List<Risk> getRisks() {
+    public Risks getRisks() {
         return risks;
     }
 }
