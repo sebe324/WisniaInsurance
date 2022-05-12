@@ -2,12 +2,12 @@ package com.company.classes;
 
 import java.util.List;
 
-public class BusisnessCustomer extends Customer {
+public class BusinessCustomer extends Customer {
    private String nip;
    private String regon;
    private String representative;
 
-   public BusisnessCustomer(int id, Address address, String telephone, List<Policy> policies, int bank, String nip, String regon, String representative) {
+   public BusinessCustomer(int id, Address address, String telephone, List<Policy> policies, int bank, String nip, String regon, String representative) {
       super(id, address, telephone, policies, bank);
       this.nip = nip;
       this.regon = regon;
