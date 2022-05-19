@@ -19,6 +19,8 @@ public class Connect {
             tm.createIndividualCustomer();
             tm.createBusisnessCustomer();
             tm.createDamage();
+            tm.createRisk();
+            tm.createEvent();
         } catch (Exception e) {
             System.out.println(e);
         } finally {
