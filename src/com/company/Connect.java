@@ -20,6 +20,7 @@ public class Connect {
             tm.createBusisnessCustomer();
             tm.createDamage();
             tm.createRisk();
+            tm.createRisks();
             tm.createEvent();
         } catch (Exception e) {
             System.out.println(e);

@@ -43,6 +43,9 @@ public class TableMaker {
     public void createRisk() throws SQLException{
         if(!tableExists(con,"Risk")) st.execute("create table Risk(id INTEGER not null constraint Risk_pk primary key autoincrement, price REAL not null, protectionFrom TEXT not null, protectionTo TEXT not null, description TEXT not null, policyTypeId INTEGER constraint Risk_PolicyType_id_fk references PolicyType (id));");
     }
+    public void createRisks() throws SQLException{
+        if(!tableExists(con, "Risks")) st.execute("create table Risks(CustomerId INTEGER not null constraint Risks_Customer_id_fk references Customer(id), RiskId INTEGER not null constraint Risks_Risk_id_fk references Risk(Id));");
+    }
     public void createEvent() throws SQLException{
         if(!tableExists(con,"Event")) st.execute("create table Event(id INTEGER not null constraint Event_pk primary key autoincrement, eventDate TEXT not null, damagesId INTEGER not null, eventPlace TEXT not null, courseOfEvents TEXT not null)");
     }
