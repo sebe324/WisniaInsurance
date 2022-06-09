@@ -53,9 +53,9 @@ public class TableMaker {
         if(tableExists(con,"BusinessCustomer")) st.execute("insert into BusinessCustomer(nip,regon,representative) values ('"+nip+"','"+regon+"','"+representative+"')");
     }
     public void createCustomer() throws SQLException{
-        if(!tableExists(con,"Customer")) st.execute("create table Customer ( id INTEGER not null constraint Customer_pk primary key autoincrement, addressId INTEGER not null constraint Customer_Address_id_fk references Address (id), telephone TEXT not null, policiesId int not null constraint Customer_Temp_id_fk references Temp(id));");
+        if(!tableExists(con,"Customer")) st.execute("create table Customer ( id INTEGER not null constraint Customer_pk primary key autoincrement, addressId INTEGER not null constraint Customer_Address_id_fk references Address (id), telephone TEXT not null, policiesId int constraint Customer_Temp_id_fk references Temp(id));");
     }
-    public void insertToCustomer(int addressId, String telephone, int policiesId) throws SQLException{
+    public void insertToCustomer(int addressId, String telephone, Integer policiesId) throws SQLException{
         if(tableExists(con, "Customer")) st.execute("insert into Customer(addressId, telephone, policiesId) values ('"+addressId+"','"+telephone+"','"+policiesId+"')");
     }
     public void createDamage() throws SQLException{
@@ -71,7 +71,10 @@ public class TableMaker {
         if(tableExists(con,"Risk")) st.execute("insert into Risk(price,protectionFrom,protectionTo,description,policyTypeId) values ('"+price+"','"+protectionFrom+"','"+protectionTo+"','"+description+"','"+policyTypeId+"')");
     }
     public void createRisks() throws SQLException{
-        if(!tableExists(con, "Risks")) st.execute("create table Risks(CustomerId INTEGER not null constraint Risks_Customer_id_fk references Customer(id), RiskId INTEGER not null constraint Risks_Risk_id_fk references Risk(Id));");
+        if(!tableExists(con, "Risks")) st.execute("create table Risks(customerId INTEGER not null constraint Risks_Customer_id_fk references Customer(id), riskId INTEGER not null constraint Risks_Risk_id_fk references Risk(Id));");
+    }
+    public void insertToRisks(int customerId, int riskId) throws SQLException{
+        if(tableExists(con,"Risks")) st.execute("insert into Risks(customerId, riskId) values ('"+customerId+"','"+riskId+"')");
     }
     public void createEvent() throws SQLException{
         if(!tableExists(con,"Event")) st.execute("create table Event(id INTEGER not null constraint Event_pk primary key autoincrement, eventDate TEXT not null, damagesId INTEGER not null, eventPlace TEXT not null, courseOfEvents TEXT not null);");
